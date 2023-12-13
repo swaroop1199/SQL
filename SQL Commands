@@ -1,0 +1,137 @@
+select * from student 
+
+alter table student add column degree varchar(50)
+
+alter table student drop degree
+
+alter table student add column degree varchar (30)
+
+select * from student 
+
+update student set degree = 'Mechanical' where rollnumber = 1
+
+update student set post = 'ASE' where rollnumber = 1
+
+select * from student where degree = 'Mechanical'
+
+update student set degree = 'Mechanical' where name ='Vipul'
+
+select * from student where degree = 'Mechanical' and name ='Vipul'
+
+alter table student drop degree, post
+
+select * from student 
+
+select * from student where rollnumber between 2 and 5
+
+insert into student values(13, 34, 'Venu')
+
+update student set company = 'Celebal' where name ='Venu'
+
+select * from student where rollnumber is null
+
+insert into student values(Null,80,'Sandeep')
+
+select * from student where rollnumber is null
+
+select * from student 
+
+select distinct rollnumber from student 
+
+alter table student drop post, drop degree
+
+select * from student 
+
+alter table student add column post varchar(20), add column degree varchar(30)
+
+alter table student drop post
+
+alter table student alter column post type character varying(80)
+
+select * from student 
+
+
+------------------------------------------------------------------------------------
+
+
+create table pupil (
+rollnumber int,
+name varchar(30),
+branch varchar(30)
+)
+
+select * from pupil
+
+insert into pupil values (1,'Swaroop', 'Mechanical')
+
+insert into pupil values (2,'Vinay','Bsc')
+
+select * from pupil
+
+alter table pupil drop name, drop branch
+
+alter table pupil add column state varchar (30)
+
+update pupil set state ='Maharashtra' where rollnumber= 1
+
+insert into pupil values (12,Null)
+
+update pupil set state ='Maharshtra' where rollnumber = 4
+
+select * from student 
+
+select * from pupil
+
+
+-------------------------------------------------------------------------------------------
+
+
+select * from pupil
+
+select * from student 
+
+select distinct name from student 
+
+insert into pupil values(13,'Tamilnadu')
+
+-----------------------------------------------------------------------------
+
+-- inner join with pupil and student 
+
+
+select student.name , pupil.state
+from student 
+inner join pupil on student.rollnumber =pupil.rollnumber
+
+-----------------------------------------------------------------------------
+
+-- outer full join with pupil and student 
+
+
+select student.name , pupil.state
+from student 
+full outer join pupil on student.rollnumber =pupil.rollnumber
+
+-----------------------------------------------------------------------------
+
+-- right join with pupil and student 
+
+
+select student.name ,student.company, pupil.state
+from student 
+right join pupil on student.rollnumber =pupil.rollnumber
+order by student.name
+
+-----------------------------------------------------------------------------
+
+-- left join with pupil and student 
+
+
+select student.name ,student.company, pupil.state
+from student 
+left join pupil on student.rollnumber =pupil.rollnumber
+order by student.name
+
+-----------------------------------------------------------------------------
+
+
